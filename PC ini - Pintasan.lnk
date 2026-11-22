@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Digital Proyek Kemanusiaan 2026</title>
+  <meta name="description" content="Eksplorasi modul edukasi Proyek Kemanusiaan Berdampak -Sosiologi 2026.">
+
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fff7ed;
+      background-image: radial-gradient(#fdba74 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      margin: 0; padding: 0; color: #18181b;
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+    .wrapper-atas { max-width: 1080px; width: 100%; margin: 30px auto 20px auto; padding: 0 20px; }
+    .bento-hero {
+      background-color: #f97316; border: 3px solid #18181b; border-radius: 24px;
+      padding: 36px 32px; box-shadow: 8px 8px 0px #18181b;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 24px; color: #ffffff;
+    }
+    .hero-kiri { flex: 1; min-width: 280px; }
+    .tag-pill {
+      display: inline-block; background-color: #fef08a; color: #18181b;
+      font-weight: 800; font-size: 12px; padding: 6px 14px;
+      border: 2px solid #18181b; border-radius: 99px; margin-bottom: 14px;
+      text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 3px 3px 0px #18181b;
+    }
+    .bento-hero h1 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 34px; line-height: 1.15;
+      margin: 0 0 12px 0; color: #ffffff; text-shadow: 2px 2px 0px #18181b;
+    }
+    .bento-hero p { font-size: 15px; line-height: 1.6; margin: 0; color: #fff7ed; max-width: 580px; }
+    .hero-logo-box {
+      background-color: #ffffff; border: 3px solid #18181b; border-radius: 20px;
+      padding: 18px; box-shadow: 6px 6px 0px #18181b;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-logo-box img { max-height: 85px; width: auto; display: block; }
+    .search-section { max-width: 1080px; width: 100%; margin: 15px auto 30px auto; padding: 0 20px; }
+    .kotak-cari {
+      width: 100%; padding: 16px 24px; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px; font-weight: 700; background-color: #ffffff; color: #18181b;
+      border: 3px solid #18181b; border-radius: 16px; box-shadow: 6px 6px 0px #f97316;
+      outline: none; transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .kotak-cari:focus { transform: translate(-2px, -2px); box-shadow: 8px 8px 0px #18181b; }
+    .grid-bento {
+      max-width: 1080px; width: 100%; margin: 0 auto; padding: 0 20px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 26px; flex-grow: 1;
+    }
+    .kartu-genz {
+      background-color: #ffffff; border: 3px solid #18181b; border-radius: 20px;
+      overflow: hidden; text-decoration: none; color: inherit; box-shadow: 6px 6px 0px #18181b;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .kartu-genz:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0px #f97316; background-color: #fffaf5; }
+    .wadah-gambar { position: relative; border-bottom: 3px solid #18181b; height: 185px; overflow: hidden; }
+    .wadah-gambar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge-nomor {
+      position: absolute; top: 12px; left: 12px; background-color: #f97316; color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700;
+      padding: 5px 12px; border: 2px solid #18181b; border-radius: 10px; box-shadow: 3px 3px 0px #18181b;
+    }
+    .konten-kartu { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+    .judul-materi { font-size: 18px; font-weight: 800; line-height: 1.35; margin: 0 0 10px 0; color: #18181b; }
+    .deskripsi-singkat { font-size: 14px; color: #52525b; line-height: 1.5; margin: 0 0 18px 0; }
+    .tombol-aksi {
+      margin-top: auto; display: inline-flex; align-items: center; justify-content: space-between;
+      background-color: #ffedd5; color: #c2410c; font-weight: 800; font-size: 13px;
+      padding: 10px 14px; border: 2px solid #18181b; border-radius: 12px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .kartu-genz:hover .tombol-aksi { background-color: #f97316; color: #ffffff; }
+    .footer-wrapper { max-width: 1080px; width: 100%; margin: 50px auto 30px auto; padding: 0 20px; }
+    .footer-box {
+      background-color: #18181b; color: #f4f4f5; border: 3px solid #18181b;
+      border-radius: 22px; padding: 28px 32px; box-shadow: 8px 8px 0px #f97316;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;
+    }
+    .info-kredit div { margin-bottom: 6px; font-size: 14px; }
+    .info-kredit span { color: #fb923c; font-weight: 800; }
+    .copyright-badge {
+      background-color: #27272a; border: 2px solid #f97316; color: #fed7aa;
+      padding: 8px 16px; border-radius: 12px; font-size: 12px; font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper-atas">
+    <header class="bento-hero">
+      <div class="hero-kiri">
+        <span class="tag-pill">⚡ Pustaka Digital Interaktif</span>
+        <h1>Eksplorasi 10 Materi Edukasi Pilihan</h1>
+        <p>Website ini dirancang sebagai ruang belajar modern yang ringkas dan mudah diakses. Klik kartu di bawah untuk langsung mengunduh materi Word.</p>
+      </div>
+      <div class="hero-logo-box">
+        <img src="logo.jpeg" alt="Logo Website">
+      </div>
+    </header>
+  </div>
+
+  <div class="search-section">
+    <input type="text" id="inputCari" class="kotak-cari" onkeyup="cariMateri()" placeholder="🔍 Ketik kata kunci judul atau topik materi...">
+  </div>
+
+  <main class="grid-bento">
+
+    <!-- MATERI 1 -->
+    <a href="materi1.docx" class="kartu-genz">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">#01</span>
+        <img src="gambar1.jpeg" alt="Materi 1">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Penguatan Kemampun Kader</h2>
+        <p class="deskripsi-singkat">Materi Penguatan Kemampuan Kader bertujuan untuk meningkatkan kapasitas kader dalam menjalankan tugas dan fungsinya di masyarakat. Materi ini mencakup peningkatan pengetahuan, keterampilan komunikasi, teknik penyuluhan, pendataan, pelaporan, serta pemahaman terhadap program-program yang dilaksanakan. Dengan adanya penguatan kapasitas ini, kader diharapkan dapat memberikan edukasi, pendampingan, dan pelayanan kepada masyarakat secara lebih efektif, profesional, dan berkelanjutan sehingga mendukung keberhasilan program di lapangan.</p>
+        <div class="tombol-aksi"><span>Unduh Materi (Word)</span><span>&darr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 2 -->
+    <a href="materi2.docx" class="kartu-genz" download>
+      <div class="wadah-gambar">
+        <span class="badge-nomor">#02</span>
+        <img src="gambar2.jpg" alt="Materi 2">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="Pengolahan Makanan Bergizi Gratis Dengan Bahan Pangan Lokal">Judul Materi Kedua</h2>
+        <p class="Pengolahan Makanan Bergizi Gratis dengan Bahan Pangan Lokal merupakan kegiatan yang bertujuan memanfaatkan bahan pangan lokal yang mudah diperoleh untuk diolah menjadi makanan sehat, bergizi, dan seimbang. Kegiatan ini mendukung pemenuhan kebutuhan gizi masyarakat sekaligus meningkatkan pemanfaatan potensi pangan daerah. Melalui pengolahan yang tepat, bahan pangan lokal dapat menjadi menu yang bernilai gizi tinggi, aman dikonsumsi, dan mendukung pola makan sehat bagi keluarga.">Penjelasan singkat satu kalimat tentang materi kedua.</p>
+        <div class="tombol-aksi"><span>Unduh Materi (Word)</span><span>&darr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 3 -->
+    <a href="materi3.docx" class="kartu-genz" download>
+      <div class="wadah-gambar">
+        <span class="badge-nomor">#03</span>
+        <img src="gambar3.jpg" alt="Materi 3">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Judul Materi Ketiga</h2>
+        <p class="deskripsi-singkat">Penjelasan singkat satu kalimat tentang materi ketiga.</p>
+        <div class="tombol-aksi"><span>Unduh Materi (Word)</span><span>&darr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 4 -->
+    <a href="materi4.docx" class="kartu-genz" download>
+      <div class="wadah-gambar">
+        <span class="badge-nomor">#04</span>
+        <img src="gambar4.jpg" alt="Materi 4">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Judul Materi Keempat</h2>
+        <p class="deskripsi-singkat">Penjelasan singkat satu kalimat tentang materi keempat.</p>
+        <div class="tombol-aksi"><span>Unduh Materi (Word)</span><span>&darr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 5 -->
+    <a href="materi5.docx" class="kartu-genz" download>
+      <div class="wadah-gambar">
+        <span class="badge-nomor">#05</span>
+        <img src="gambar5.jpg" alt="Materi 5">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Judul Materi Kelima</h2>
+        <p class="deskripsi-singkat">Penjelasan singkat satu kalimat tentang materi kelima.</p>
+        <div class="tombol-aksi"><span>Unduh Materi (Word)</span><span>&darr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 6 -->
+    <a href="materi6.docx" class="kartu-genz" download>
+      <div class="wadah-gambar">
+        <span class="badge-nomor">#06</span>
+        <img src="gambar6.jpg" alt="Materi 6">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Judul Materi Keenam</h2>
+        <p class="deskripsi-singkat">Penjelasan singkat satu kalimat tentang materi keenam.</p>
+        <div class="tombol-aksi"><span>Unduh Materi (Word)</span><span>&darr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 7 -->
+    <a href="materi7.docx" class="kartu-genz" download>
+      <div class="wadah-gambar">
+        <span class="badge-nomor">#07</span>
+        <img src="gambar7.jpg" alt="Materi 7">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Judul Materi Ketujuh</h2>
+        <p class="deskripsi-singkat">Penjelasan singkat satu kalimat tentang materi ketujuh.</p>
+        <div class="tombol-aksi"><span>Unduh Materi (Word)</span><span>&darr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 8 -->
+    <a href="materi8.docx" class="kartu-genz" download>
+      <div class="wadah-gambar">

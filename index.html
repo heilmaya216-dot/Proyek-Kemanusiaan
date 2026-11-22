@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi Digital Balai Penyuluhan KB - Proyek Kemanusiaan Sosiologi 2026</title>
+  <meta name="description" content="Pustaka materi edukasi dan penyuluhan keluarga berencana - Proyek Kemanusiaan Sosiologi 2026.">
+
+  <link rel="preconnect" href="https://googleapis.com">
+  <link rel="preconnect" href="https://gstatic.com" crossorigin>
+  <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fff7ed;
+      background-image: radial-gradient(#fdba74 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+      margin: 0; padding: 0; color: #18181b;
+      display: flex; flex-direction: column; min-height: 100vh;
+    }
+
+    /* HEADER BENTO */
+    .wrapper-atas { max-width: 1080px; width: 100%; margin: 30px auto 20px auto; padding: 0 20px; }
+    .bento-hero {
+      background-color: #f97316; border: 3px solid #18181b; border-radius: 24px;
+      padding: 36px 32px; box-shadow: 8px 8px 0px #18181b;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 24px; color: #ffffff;
+    }
+    .hero-kiri { flex: 1; min-width: 280px; }
+    .tag-pill {
+      display: inline-block; background-color: #fef08a; color: #18181b;
+      font-weight: 800; font-size: 12px; padding: 6px 14px;
+      border: 2px solid #18181b; border-radius: 99px; margin-bottom: 14px;
+      text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 3px 3px 0px #18181b;
+    }
+    .bento-hero h1 {
+      font-family: 'Space Grotesk', sans-serif; font-size: 30px; line-height: 1.2;
+      margin: 0 0 12px 0; color: #ffffff; text-shadow: 2px 2px 0px #18181b;
+    }
+    .bento-hero p { font-size: 15px; line-height: 1.6; margin: 0; color: #fff7ed; max-width: 600px; }
+    .hero-logo-box {
+      background-color: #ffffff; border: 3px solid #18181b; border-radius: 20px;
+      padding: 18px; box-shadow: 6px 6px 0px #18181b;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-logo-box img { max-height: 85px; width: auto; display: block; }
+
+    /* BAR PENCARIAN */
+    .search-section { max-width: 1080px; width: 100%; margin: 15px auto 30px auto; padding: 0 20px; }
+    .kotak-cari {
+      width: 100%; padding: 16px 24px; font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px; font-weight: 700; background-color: #ffffff; color: #18181b;
+      border: 3px solid #18181b; border-radius: 16px; box-shadow: 6px 6px 0px #f97316;
+      outline: none; transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .kotak-cari:focus { transform: translate(-2px, -2px); box-shadow: 8px 8px 0px #18181b; }
+
+    /* GRID KARTU */
+    .grid-bento {
+      max-width: 1080px; width: 100%; margin: 0 auto; padding: 0 20px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 26px; flex-grow: 1;
+    }
+
+    /* KARTU MATERI PDF */
+    .kartu-genz {
+      background-color: #ffffff; border: 3px solid #18181b; border-radius: 20px;
+      overflow: hidden; text-decoration: none; color: inherit; box-shadow: 6px 6px 0px #18181b;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .kartu-genz:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0px #f97316; background-color: #fffaf5; }
+    .kartu-genz:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #18181b; }
+
+    .wadah-gambar {
+      position: relative; border-bottom: 3px solid #18181b; height: 185px;
+      overflow: hidden; background-color: #fed7aa;
+    }
+    .wadah-gambar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge-nomor {
+      position: absolute; top: 12px; left: 12px; background-color: #f97316; color: #ffffff;
+      font-family: 'Space Grotesk', sans-serif; font-size: 13px; font-weight: 700;
+      padding: 5px 12px; border: 2px solid #18181b; border-radius: 10px; box-shadow: 3px 3px 0px #18181b;
+    }
+    .konten-kartu { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+    .judul-materi { font-size: 18px; font-weight: 800; line-height: 1.35; margin: 0 0 10px 0; color: #18181b; }
+    .deskripsi-singkat { font-size: 13.5px; color: #52525b; line-height: 1.55; margin: 0 0 18px 0; }
+    .tombol-aksi {
+      margin-top: auto; display: inline-flex; align-items: center; justify-content: space-between;
+      background-color: #ffedd5; color: #c2410c; font-weight: 800; font-size: 13px;
+      padding: 10px 14px; border: 2px solid #18181b; border-radius: 12px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .kartu-genz:hover .tombol-aksi { background-color: #f97316; color: #ffffff; }
+
+    /* KARTU KHUSUS YOUTUBE */
+    .kartu-youtube {
+      background-color: #fef2f2; border: 3px solid #18181b; border-radius: 20px;
+      overflow: hidden; text-decoration: none; color: inherit; box-shadow: 6px 6px 0px #dc2626;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .kartu-youtube:hover { transform: translate(-4px, -4px); box-shadow: 10px 10px 0px #18181b; background-color: #fee2e2; }
+    .banner-yt {
+      height: 185px; border-bottom: 3px solid #18181b;
+      background: linear-gradient(135deg, #dc2626, #991b1b);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: #ffffff; position: relative;
+    }
+    .ikon-play {
+      width: 60px; height: 60px; background-color: #fef08a; color: #18181b;
+      border: 3px solid #18181b; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; font-size: 24px; box-shadow: 4px 4px 0px #18181b;
+    }
+    .badge-yt {
+      position: absolute; top: 12px; left: 12px; background-color: #18181b; color: #fef08a;
+      font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700;
+      padding: 5px 12px; border: 2px solid #18181b; border-radius: 10px;
+    }
+    .tombol-yt {
+      margin-top: auto; display: inline-flex; align-items: center; justify-content: space-between;
+      background-color: #dc2626; color: #ffffff; font-weight: 800; font-size: 13px;
+      padding: 10px 14px; border: 2px solid #18181b; border-radius: 12px;
+    }
+
+    /* FOOTER */
+    .footer-wrapper { max-width: 1080px; width: 100%; margin: 50px auto 30px auto; padding: 0 20px; }
+    .footer-box {
+      background-color: #18181b; color: #f4f4f5; border: 3px solid #18181b;
+      border-radius: 22px; padding: 28px 32px; box-shadow: 8px 8px 0px #f97316;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;
+    }
+    .info-kredit div { margin-bottom: 6px; font-size: 14px; }
+    .info-kredit span { color: #fb923c; font-weight: 800; }
+    .copyright-badge {
+      background-color: #27272a; border: 2px solid #f97316; color: #fed7aa;
+      padding: 8px 16px; border-radius: 12px; font-size: 12px; font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="wrapper-atas">
+    <header class="bento-hero">
+      <div class="hero-kiri">
+        <span class="tag-pill">⚡ Pustaka Digital Proyek Kamanusiaan - Sosiologi 2026</span>
+        <h1>Materi Digital Balai Penyuluhan KB - Proyek Kemanusiaan Sosiologi 2026</h1>
+        <p>Materi digital yang ringkas dan mudah diakses. Klik salah satu kartu di bawah untuk langsung membaca isi materi.</p>
+      </div>
+      <div class="hero-logo-box">
+        <img src="logo.png" alt="Logo Website">
+      </div>
+    </header>
+  </div>
+ <div class="hero-logo-box">
+        <img src="logo1.jpeg" alt="Logo Website">
+ <img src="logo2.jpeg" alt="Logo Website">
+ <img src="logo3.jpeg" alt="Logo Website">
+ <img src="logo4.jpeg" alt="Logo Website">
+ <img src="logo5.jpeg" alt="Logo Website">
+ <img src="logo6.jpeg" alt="Logo Website">
+ <img src="logo7.jpeg" alt="Logo Website">
+<img src="logo8.jpeg" alt="Logo Website">
+<img src="logo10.jpeg" alt="Logo Website">
+<img src="logo11.jpeg" alt="Logo Website">
+<img src="logo12.jpeg" alt="Logo Website">
+
+      </div>
+    </header>
+  </div>
+
+
+  <!-- PENCARIAN -->
+  <div class="search-section">
+    <input type="text" id="inputCari" class="kotak-cari" onkeyup="cariMateri()" placeholder="🔍 Ketik kata kunci judul atau topik materi...">
+  </div>
+
+  <!-- DAFTAR 10 KARTU SESUAI URUTAN -->
+  <main class="grid-bento">
+
+    <!-- MATERI 1 -->
+    <a href="materi1.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 1</span>
+        <img src="gambar1.jpeg" alt="Materi 1">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 1 : Penguatan Kemampuan KIE Untuk Kader</h2>
+        <p class="deskripsi-singkat">Panduan teknik Komunikasi, Informasi, dan Edukasi (KIE) yang efektif, empatik, dan persuasif bagi kader KB dalam mendampingi keluarga di lapangan.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+
+    <!-- MATERI 2 -->
+    <a href="materi2.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 2</span>
+        <img src="gambar2.jpeg" alt="Materi 2">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 2 : Pencegahan Pernikahan Dini</h2>
+        <p class="deskripsi-singkat">Edukasi mengenai dampak kesehatan reproduksi, psikologis, dan sosial ekonomi dari perkawinan usia anak serta strategi pendewasaan usia perkawinan.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+<!-- MATERI 3 -->
+    <a href="materi3.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 3</span>
+        <img src="gambar3.jpeg" alt="Materi 3">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 3 : Pengolahan Makanan Bergizi</h2>
+        <p class="deskripsi-singkat">Pedoman praktis penyusunan menu seimbang, higienis, dan pemanfaatan bahan pangan lokal terjangkau untuk mendukung pemenuhan gizi masyarakat.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+
+<!-- MATERI 4 -->
+    <a href="materi4.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 4</span>
+        <img src="gambar4.jpeg" alt="Materi 4">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 4 : Bimbingan Pernikahan Calon Pengantin</h2>
+        <p class="deskripsi-singkat">Bekal kesiapan fisik, mental, perencanaan kehamilan, serta pemeriksaan kesehatan pranikah bagi pasangan calon pengantin sebelum membangun keluarga.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+
+<!-- MATERI 5 -->
+    <a href="materi5.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 5</span>
+        <img src="gambar5.jpeg" alt="Materi 5">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 5 : Mengenal Metode Kontrasepsi Jangka Panjang</h2>
+        <p class="deskripsi-singkat">Informasi lengkap mengenai jenis, manfaat, cara kerja, dan efektivitas MKJP (IUD, Implan, MOW, MOP) untuk mengatur jarak kelahiran secara aman.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+
+<!-- MATERI 6 -->
+    <a href="materi6.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 6</span>
+        <img src="gambar6.jpeg" alt="Materi 6">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 6 : Pemenuhan Gizi dan Pencegahan Stunting
+</h2>
+        <p class="deskripsi-singkat">Langkah pencegahan stunting sejak masa remaja, kehamilan, hingga 1.000 Hari Pertama Kehidupan (HPK) melalui asupan nutrisi dan sanitasi sehat.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+
+<!-- MATERI 7 -->
+    <a href="materi7.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 7</span>
+        <img src="gambar7.jpeg" alt="Materi 7">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 7 : Lansia Sehat, Mandiri, dan Produktif</h2>
+        <p class="deskripsi-singkat">Penerapan tujuh dimensi lansia tangguh untuk mewujudkan warga lanjut usia yang tetap sehat secara fisik, aktif bersosialisasi, dan bermartabat.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+
+<!-- MATERI 8 -->
+    <a href="materi8.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 8</span>
+        <img src="gambar8.jpeg" alt="Materi 8">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 8 : Strategi Pemasaran Produk UMKM Keluarga - UPPKA
+</h2>
+        <p class="deskripsi-singkat">Panduan pengemasan, branding, dan pemasaran digital bagi kelompok Usaha Peningkatan Pendapatan Keluarga Akseptor (UPPKA) untuk ekonomi keluarga.</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+
+<!-- MATERI 9 -->
+    <a href="materi2.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 9</span>
+        <img src="gambar9.jpeg" alt="Materi 2">
+      </div>
+      <div class="konten-kartu">
+        <h2 class="judul-materi">Materi 9 : Pola Asuh dan Stimulus Tumbuh Kembang Anak</h2>
+        <p class="deskripsi-singkat">Praktik pengasuhan positif dan stimulasi motorik, kognitif, serta emosional anak usia dini melalui program Bina Keluarga Balita (BKB).</p>
+        <div class="tombol-aksi"><span>Lihat & Baca Materi</span><span>&rarr;</span></div>
+      </div>
+    </a>
+<!-- Taruh pembungkus <center> khusus untuk Materi 10 -->
+<center>
+  <div class="card">
+    <span></span>
+    <h3></h3>
+    <p></p>
+    <button></button>
+  </div>
+</center>
+
+<!-- MATERI 10 -->
+<!-- Tambahkan style="grid-column: 2;" khusus pada pembungkus Materi 10 -->
+  <a href="materi10.pdf" class="kartu-genz" target="_blank" rel="noopener noreferrer">
+      <div class="wadah-gambar">
+        <span class="badge-nomor">Materi 10</span>
+        <img src="gambar10.jpeg" alt="Materi 10">
+      </div>
+      <div class="konten-kartu" style="grid-column: 2;">
+        <h2 class="judul-materi">Materi 10 : Peran Orang Tua dalam Mendampingi Remaja</h2>
+        <p class="deskripsi-singkat">Membangun komunikasi terbuka antara orang tua dan remaja (BKR) guna mencegah perilaku berisiko dan membentuk generasi berencana (GenRe).</p>
+</div>
+      </a> 
+
+
+</main>
+<p style="text-align: center;">
+ <!-- BAGIAN BAWAH: NAMA PEMBUAT WEBSITE & PENYUSUN MATERI -->
+  <footer class="footer-website">
+    <div><strong>Pembuat Website:</strong> HEIL MAYA</div>
+    <div><strong>Penyusun Materi:</strong> SELVI ANASTASIA - AYU WULANDARI</div>
+    <div class="copyright">&copy; 2026 Materi Edukasi. Hak Cipta Dilindungi.</div>
+  </footer>
+</p>
+
+
+  <!-- Kode Fungsi Pencarian Otomatis -->
+  <script>
+    function cariMateri() {
+      let input = document.getElementById('inputCari').value.toLowerCase();
+      let kartu = document.getElementsByClassName('kartu');
+
+      for (let i = 0; i < kartu.length; i++) {
+        let judul = kartu[i].getElementsByClassName('judul-materi').innerText.toLowerCase();
+        if (judul.includes(input)) {
+          kartu[i].style.display = "flex";
+        } else {
+          kartu[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
